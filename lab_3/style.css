@@ -19,7 +19,7 @@ body {
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Bowlby One SC', cursive;
+  font-family: 'Coda', cursive;
   color: #2a2a2a;
 }
 
@@ -32,11 +32,13 @@ h1 {
   font-size: 4rem;
   text-align: center;
   text-shadow: 2px 2px 10px black;
+  font-weight: 400;
 }
 
 h2 {
   font-size: 3rem;
   text-align: center;
+  font-weight: 800;
 }
 
 h3 {
