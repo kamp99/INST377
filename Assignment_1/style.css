@@ -1,14 +1,22 @@
 .header{
-    background-color: blue;
-    color: white;
-    text-align: center;
-}
+    background-color: rgb(63, 59, 59);
+    color: rgb(228, 225, 225);
+    display: flex;
+    flex-flow: row wrap;
 
+}
+header img{
+    display: block;
+    height: 60px;
+    padding-top: 20.15px;
+
+}
 .resume{
     border: 5px solid black;
     width: 60%;
     margin: auto;
     display: flex;
+    flex-flow: row wrap;
 
 }
 .work_history{
