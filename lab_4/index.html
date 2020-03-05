@@ -26,31 +26,36 @@
     </div>
     <script>
 
+      function clickMe() {
+      
+      //var names
       var firstName = "Patrick";
       var lastName = "Kam";
       var nameTotal = firstName.length + lastName.length;
+      
+      //header
+      let header = document.querySelector(".header");
+      header.textContent = "Patrick Kam's Lab 4" + " " + nameTotal;
 
-      function clickMe() {
-        const content = document.querySelector(".content");
-        content.innerHTML = "Hello world";
+      //Paragraph 1 
+      let p = document.createElement('p');
+      p.setAttribute('class','NameLength');
+      let t = "My name has " + nameTotal + " characters.";
+      let pt = document.createTextNode(t);
+      p.appendChild(pt);
+      document.querySelector(".content").appendChild(p);
 
-      const header = document.querySelector(".header");
-      header.innerText = "Patrick Kam's Lab 4" + " " + nameTotal
+      //Paragraph 2 
+      let p2 = document.createElement('p');
+      p2.setAttribute('class','ThirdLetter');
+      let t2 = "The third letter in my name is " + firstName[2].toUpperCase + ".";
+      p2.appendChild(document.createTextNode(t2));
+      p2.appendChild(document.createElement("br"));
+      let ln2 = "The last three letters are " + lastName.slice(lastName.length-3, lastName.length);
+      p2.appendChild(document.createTextNode(ln2));
+      document.querySelector(".content").appendChild(p2);
+      
       }
-      //Paragraph 1
-      var para = document.createElement("P");
-      var t = document.createTextNode("My name has " + nameTotal + "characters." );
-      para.appendChild(t);  
-      document.getElementById("body").appendChild(para);
-
-      //Paragraph 2
-      var para1 = document.createElement("P");
-      var t1 = document.createTextNode("The third character in my name is T." + "<br />" 
-      + firstName.substring(firstName.length-3,firstName.length-1));
-      para1.appendChild(t1);       
-      document.getElementById("content").appendChild(para1);
-      
-      
       
     </script>
   </body>
