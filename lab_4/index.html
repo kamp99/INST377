@@ -25,14 +25,33 @@
       </div>
     </div>
     <script>
+
+      var firstName = "Patrick";
+      var lastName = "Kam";
+      var nameTotal = firstName.length + lastName.length;
+
       function clickMe() {
         const content = document.querySelector(".content");
         content.innerHTML = "Hello world";
-      }
+
       const header = document.querySelector(".header");
-      header.innerText = "Patrick Kam's Demo Page"
+      header.innerText = "Patrick Kam's Lab 4" + " " + nameTotal
+      }
+      //Paragraph 1
+      var para = document.createElement("P");
+      var t = document.createTextNode("My name has " + nameTotal + "characters." );
+      para.appendChild(t);  
+      document.getElementById("body").appendChild(para);
 
-
+      //Paragraph 2
+      var para1 = document.createElement("P");
+      var t1 = document.createTextNode("The third character in my name is T." + "<br />" 
+      + firstName.substring(firstName.length-3,firstName.length-1));
+      para1.appendChild(t1);       
+      document.getElementById("content").appendChild(para1);
+      
+      
+      
     </script>
   </body>
 </html>
