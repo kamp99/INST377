@@ -28,6 +28,9 @@
 
       function clickMe() {
       
+      const content = document.querySelector(".content");
+      content.innerHTML = "Hello world"; 
+      
       //var names
       var firstName = "Patrick";
       var lastName = "Kam";
@@ -48,13 +51,13 @@
       //Paragraph 2 
       let p2 = document.createElement('p');
       p2.setAttribute('class','ThirdLetter');
-      let t2 = "The third letter in my name is " + firstName[2].toUpperCase + ".";
+      let t2 = "The third letter in my name is " + firstName[2].toUpperCase() + ".";
       p2.appendChild(document.createTextNode(t2));
       p2.appendChild(document.createElement("br"));
       let ln2 = "The last three letters are " + lastName.slice(lastName.length-3, lastName.length);
       p2.appendChild(document.createTextNode(ln2));
       document.querySelector(".content").appendChild(p2);
-      
+
       }
       
     </script>
