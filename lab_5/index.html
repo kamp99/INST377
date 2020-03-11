@@ -3,32 +3,20 @@
 
 <head>
   <title>Test JSON page</title>
-  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">Test JSON page</div>
-      <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list
+      <div class="header">Patrick's List of Countries</div>
+      <button class="activate" onclick = "createList()">Click me to replace list
         entries</button>
-      <div class="content">
-        <ul class="instructions">
-          <li>At the click of the button above</li>
-          <li>Replace this list</li>
-          <li>With an ordered list</li>
-          <li>Of fifty randomly-selected countries</li>
-          <li>Every time you click the above button</li>
-          <li>The list of countries should change</li>
-          <ol>
-            <li>Use your Developer tools to experiment with possible answers</li>
-            <li>When you have an idea of the correct code</li>
-            <li>Write it into your copy of the Lab HTML</li>
-            <li>And save it for submission</li>
-          </ol>
-        </ul>
-      </div>
+        <div class="content">
+          <ul class="prompt">
+            <li>Click button above</li>
+          </ul>
+        </div>
       <div class="footer"></div>
     </div>
   </div>
@@ -280,7 +268,56 @@
       { "name": "Zimbabwe", "code": "ZW" }
     ]
     console.log("List of countries in the world", countries);
+
+    function createList(){
+
+      const content = document.querySelector(".content");
+      var list = [];
+      var orderedList = document.createElement("ol");
+      var notUsed = [];
+
+      orderedList.setAttribute('class', 'countries');
+      content.replaceChild(orderedList, content.childNodes[1]);
+      notUsed = [...countries];
+      
+      for(i = 0; i < 25; i++){
+
+        var randomNum = Math.floor(Math.random()*(countries.length));
+        var done = false;
+
+      while(!done){
+        country = countries[randomNum];
+
+        if(list.includes(country)){
+          randomNum = Math.floor(Math.random()*(countries.length));
+          console.log("Found double", countries[randomNum]);
+        }
+        else{
+          list.push(country);
+          notUsed.splice(notUsed.indexOf(country), 1);
+          done = true;
+        }
+       }
+      }
+      list = list.sort((a,b) => (a.name > b.name) ? 1:-1);
+      list.forEach(addCountries);
+      console.log("Unselected countries:",unselected);
+    }
+    function random(number) {
+
+      return Math.floor(Math.random() * (countries.length));
+    }   
+    function addCountries(item){
+
+      var enterList = document.createElement("li");
+      var injectList = document.querySelector('.countries');
+      enterList.innerHTML = "<strong>" + item.code + "</strong> " + item.name;
+
+      injectList.appendChild(enterList);
+    }
+
   </script>
 </body>
 
 </html>
+
