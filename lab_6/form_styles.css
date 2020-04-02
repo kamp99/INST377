@@ -1,9 +1,13 @@
+html {
+
+    background-color: rgb(238, 227, 227);
+}
+
 form {
 
     margin: 0 auto;
     width: 400px;
     padding: 1em;
-    border: 1px solid #CCC;
     border-radius: 1em;
   }
   
@@ -48,9 +52,21 @@ form {
   .button {
 
     padding-left: 90px; 
+
   }
   
   button {
 
+    background-color: rgb(235, 163, 137);
     margin-left: .5em;
+    border: 2px solid orange;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    padding: 12px 28px;
   }
+
+  h1 {
+      
+    text-align: center;
+}
