@@ -98,6 +98,29 @@ h3 {
 }
 
 .activate:active {
+
   position: relative;
   top: 1px;
 }
+
+#mymap{
+
+  min-width: 320px; 
+}
+
+.leaflet-popup-content{
+
+  background: green;
+  color: #eee;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  border-radius: 0px;
+  text-align:center;
+}
+
+.leaflet-popup-content-wrapper{
+
+  min-width: 330px;
+  opacity: 0.9;
+ }
